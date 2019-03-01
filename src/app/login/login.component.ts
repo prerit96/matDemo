@@ -15,6 +15,7 @@ invalidCred:boolean=false;
   ngOnInit() {
     console.info(this.auth.getUser())
     console.log(this.auth.getLoggedIn())
+    console.log("changes made on local to be pushed on repo")
   }
 
   login()
