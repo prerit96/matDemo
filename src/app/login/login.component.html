@@ -1,0 +1,45 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <form (ngSubmit)="f.valid && login()" #f="ngForm">
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-12">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput placeholder="Please enter Username" [(ngModel)]="user.username" name="username"
+              #uname="ngModel" email required>
+            <mat-error *ngIf="f.submitted && uname.invalid">Invalid username</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Please enter Password" [(ngModel)]="user.password"
+              name="password" #pwd="ngModel" required>
+            <mat-error *ngIf="f.submitted && pwd.invalid">Invalid Password</mat-error>
+          </mat-form-field>
+          <div *ngIf="uname.valid && pwd.valid && invalidCred" class="delay-msg">
+            <mat-error>Invalid Credentials</mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:15px; margin-left:40px;">
+        <div class="col">
+          <button mat-button mat-raised-button color="primary">Login</button>
+        </div>
+        <div class="col">
+          <button mat-button mat-raised-button color="primary" routerLink="/register">Sign Up</button>
+        </div>
+
+      </div>
+
+
+    </mat-card-content>
+  </form>
+</mat-card>
+
+<!-- <a routerLink="/home">Home</a> -->

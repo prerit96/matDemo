@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer-left {
+    width: 5%
+}
+
+.spacer-right {
+  width: 65%
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    width: 375px
+}
+
+.login-card {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 60px;
+    max-width: 410px;
+  }
+
+.register-card {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 60px;
+    max-width: 480px;
+ }
+
+.mat-radio-outer-circle {
+  height: 15px !important;
+  width: 15px !important;
+
+}
+
+.mat-radio-inner-circle {
+  height: 15px !important;
+  width: 15px !important;
+
+}
+
+.mat-radio-button .mat-radio-ripple {
+left: calc(50% - 18px) !important;
+top: calc(50% - 18px) !important;
+height: 30px !important;
+width: 30px !important;
+}
+
+.mat-radio-button {
+margin-right: 20px;
+margin-left: 20px;
+}
+
+.mat-radio-label-content {
+  padding-left: 0px !important;
+}
+
+table{
+  width:75%;
+  margin-left :auto;
+  margin-right:auto;
+  margin-top:50px
+}
+
+.example-container {
+  width: auto;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.h2_header {
+  text-align:center;
+  margin-top: 20px;
+  font-size: 1.5rem
+}
+
+.register-datepicker-width {
+  width:420px
+}
+
+.mat-datepicker-toggle-default-icon {
+  width: 2em;
+}
+
+.delay-msg {
+  animation: seconds 1.0s forwards;
+  animation-delay: 1s;  
+  text-align: center;    
+}
+
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+

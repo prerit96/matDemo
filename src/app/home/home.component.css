@@ -1,0 +1,35 @@
+a:hover {
+    background-color: #4e62d1;
+    text-decoration: none;
+}    
+
+.button-sidenav {
+    color: white;
+    background-color: #3f51b5;
+    margin-bottom: 5px;
+    margin-left:25px;
+    width:75%
+}
+
+.button-header {
+    color: white;
+    background-color: #3f51b5;
+    width:auto;
+    margin-left:5px
+}
+
+ul {
+    list-style: none;
+    padding-left:0px
+}
+
+.drawer-width {
+    width:200px;
+    /* border-right: 1px solid black */
+}
+
+h3 {
+    margin-left: 5px;
+}
+
+

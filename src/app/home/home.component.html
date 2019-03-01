@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+   <mat-toolbar-row>
+      <span class="spacer-left"></span>
+      <mat-icon>verified_user</mat-icon>
+
+      <h3>{{username}} Successfully Logged In</h3>
+      <span class="spacer-right"></span>
+      <a mat-button class="button-header" routerLink="/register">Add User</a>
+      <a mat-button class="button-header" (click)="logout()">Logout</a>
+   </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+   <mat-drawer class="drawer-width" mode="side" opened>
+      <ul>
+         <li><a mat-button class="button-sidenav" routerLink="./defaultHome">Home</a></li>
+         <li><a mat-button class="button-sidenav" routerLink="#">contact</a></li>
+         <li><a mat-button class="button-sidenav" routerLink="#">about</a></li>
+      </ul>
+   </mat-drawer>
+   <mat-drawer-content>
+      <router-outlet></router-outlet>
+   </mat-drawer-content>
+</mat-drawer-container>

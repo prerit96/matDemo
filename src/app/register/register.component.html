@@ -1,0 +1,88 @@
+<mat-card class="register-card">
+    <mat-card-header>
+        <mat-card-title>Sign Up</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="register()" #f="ngForm">
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="register-datepicker-width">
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="user.date" name="date" placeholder="Select date of registration" disabled>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker disabled="false"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput placeholder="First Name" [(ngModel)]="user.firstName"
+                            name="firstName" #fname="ngModel" required>
+                        <mat-error *ngIf="f.submitted && fname.invalid">Invalid First Name</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="lastName"
+                            #lname="ngModel" required>
+                        <mat-error *ngIf="f.submitted && lname.invalid">Invalid Last Name</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input type="text" matInput placeholder="E-mail" [(ngModel)]="user.email" name="email"
+                            #mail="ngModel" email required>
+                        <mat-error *ngIf="f.submitted && mail.invalid">Invalid E-mail</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <br>
+                    <mat-radio-group [(ngModel)]="user.gender" name="gender" #g="ngModel" required>
+                        <mat-radio-button value="Male" checked>Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button>
+                    </mat-radio-group>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput placeholder="Password" [(ngModel)]="user.password"
+                            name="password" #pwd1="ngModel" required>
+                        <mat-error *ngIf="f.submitted && pwd1.invalid">Invalid Password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput placeholder="Confirm Password"
+                            [(ngModel)]="user.confirmPassword" name="confirmPassword" #pwd2="ngModel" required>
+
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div *ngIf="pwd2.touched && user.password != user.confirmPassword" class="alert alert-danger" id="alert"
+                style="text-align: center;">
+                Passwords do not match
+            </div>
+            <div class="row">
+                <div class="col" style="margin-left:55px;">
+                    <button mat-button mat-raised-button color="primary">Register</button>
+                </div>
+                <div class="col">
+                    <button mat-button mat-raised-button color="primary" (click)="redirect()">Cancel</button>
+                </div>
+            </div>
+            <br>
+
+        </mat-card-content>
+    </form>
+</mat-card>
