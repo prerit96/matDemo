@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 export class RegisterComponent implements OnInit {
 user:any={};
 pwdMismatch:boolean;
-
+minDate = new Date();
   constructor(private router: Router,private userService: ValidateAuthService, private datepipe: DatePipe) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ pwdMismatch:boolean;
   register(){
 
     this.user.date =this.datepipe.transform(this.user.date, 'dd/MM/yyyy');
-    console.log(this.user.date)
+
     this.userService.setUser(this.user);
     this.router.navigate(['/home'])
   }

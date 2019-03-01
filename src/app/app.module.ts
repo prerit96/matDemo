@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule, MatInputModule,
-  MatToolbarModule, MatRadioModule, MatTableModule, MatSidenavModule, MatIconModule, MatDatepickerModule, MatNativeDateModule
+  MatToolbarModule, MatRadioModule, MatTableModule, MatSidenavModule, MatIconModule, MatDatepickerModule, MatNativeDateModule, DateAdapter
 } from '@angular/material';
 
 import { FormsModule } from '@angular/forms';
@@ -15,16 +15,13 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { DefaultHomeComponent } from './home/default-home/default-home.component'
 import { DatePipe } from '@angular/common';
-import { DatafilterPipe } from './Pipes/datafilter.pipe';
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    DefaultHomeComponent,
-    DatafilterPipe
+    DefaultHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +39,12 @@ import { DatafilterPipe } from './Pipes/datafilter.pipe';
     MatNativeDateModule,
     FormsModule
   ],
-  providers: [DatePipe],
+  providers: [     
+    DatePipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private dateAdapter:DateAdapter<Date>) {
+		dateAdapter.setLocale('en-in'); // DD/MM/YYYY
+	}
+}

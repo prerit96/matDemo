@@ -1,7 +1,4 @@
 <h2 class="h2_header">Registered Users</h2>
-<mat-form-field>
-  <input type="text" matInput placeholder="Search" [(ngModel)]="g">
-</mat-form-field>
 
 <table mat-table [dataSource]="userDetails" class="mat-elevation-z8">
   <ng-container matColumnDef="email">
@@ -18,7 +15,7 @@
   </ng-container>
   <ng-container matColumnDef="gender">
     <th mat-header-cell *matHeaderCellDef> Gender </th>
-    <td mat-cell *matCellDef="let element"> {{element.gender | datafilter : g}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
   </ng-container>
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef> Registration date </th>
